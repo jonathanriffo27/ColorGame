@@ -84,12 +84,31 @@ function generateRandomColors(num){
 	}
 }
 function reset(){
-	generateRandomColors(num);
-	asignar();
-	pick();
-	document.getElementById('message').innerHTML="";
-	document.getElementById('reset').innerHTML="Nuevos colores";
-	h1.style.background="#232323";
+	if(hardclass=="selected"){
+		generateRandomColors(num);
+		asignar();
+		pick();
+		document.getElementById('message').innerHTML="";
+		document.getElementById('reset').innerHTML="Nuevos colores";
+		h1.style.background="#232323";
+		document.getElementById('1').style.visibility="visible";
+		document.getElementById('2').style.visibility="visible";
+		document.getElementById('3').style.visibility="visible";
+		document.getElementById('4').style.visibility="visible";
+		document.getElementById('5').style.visibility="visible";
+		document.getElementById('6').style.visibility="visible";
+	}
+	if(easyclass=="selected"){
+		generateRandomColors(num);
+		asignar();
+		pick();
+		document.getElementById('message').innerHTML="";
+		document.getElementById('reset').innerHTML="Nuevos colores";
+		h1.style.background="#232323";
+		document.getElementById('1').style.visibility="visible";
+		document.getElementById('2').style.visibility="visible";
+		document.getElementById('3').style.visibility="visible";
+	}
 }
 let easyclass= document.getElementById('easy').className;
 let hardclass= document.getElementById('hard').className;
