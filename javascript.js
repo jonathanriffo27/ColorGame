@@ -99,7 +99,7 @@ function reset(){
 		document.getElementById('6').style.visibility="visible";
 	}
 	if(easyclass=="selected"){
-		generateRandomColors(num);
+		generateRandomColors(3);
 		asignar();
 		pick();
 		document.getElementById('message').innerHTML="";
