@@ -15,6 +15,9 @@ body{
 	padding-bottom: 30%;
 	background-color: black;
 	margin: 10px;
+	border-radius: 5px;
+	-webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.1s;
 }
 #h1{
 	display: flex;
@@ -35,7 +38,8 @@ h1{
 #message{
 	display: inline-block;
 	width: 30%;
-	font-weight: bold;
+	font-weight: 500;
+	font-size: 14px;
 }
 #stripe{
 	color: black;
@@ -45,4 +49,19 @@ h1{
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+button{
+	outline: none;
+	border: none;
+	font-size: 15px;
+	font-weight: 500;
+	/*background-color: grey;*/
+	/*border-radius: 5px;*/
+	-webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    height: 100%;
+}
+button:hover {
+    background-color: grey; /* Green */
+    color: white;
 }
