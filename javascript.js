@@ -20,11 +20,6 @@ function asignar(){
 		cuadrados[i].style.background=colors[i];
 	}	
 }
-function asignar2(){	
-	for(let i=0;i<cuadrados.length-3;i++){
-		cuadrados[i].style.background=colors[i];
-	}	
-}
 let pickedColor="";
 pick();
 function pick(){
