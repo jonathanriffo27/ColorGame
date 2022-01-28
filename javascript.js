@@ -116,6 +116,9 @@ function easy(){
 	pick();
 	// document.getElementById('message').innerHTML="";
 	// document.getElementById('reset').innerHTML="Nuevos colores";
+	document.getElementById('1').style.visibility="visible";
+	document.getElementById('2').style.visibility="visible";
+	document.getElementById('3').style.visibility="visible";
 	document.getElementById('4').style.visibility="hidden";
 	document.getElementById('5').style.visibility="hidden";
 	document.getElementById('6').style.visibility="hidden";
@@ -128,6 +131,9 @@ function hard(){
 	generateRandomColors(num);
 	asignar();
 	pick();
+	document.getElementById('1').style.visibility="visible";
+	document.getElementById('2').style.visibility="visible";
+	document.getElementById('3').style.visibility="visible";
 	document.getElementById('4').style.visibility="visible";
 	document.getElementById('5').style.visibility="visible";
 	document.getElementById('6').style.visibility="visible";
