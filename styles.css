@@ -67,7 +67,6 @@ button:hover {
 }
 @media only screen and (max-width: 600px) {
   .container {
-  	padding-left: 20px;
   	width: 550px;
   }
 }
