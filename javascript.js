@@ -33,7 +33,7 @@ function evento(){
 			let clickedColor=this.style.background;
 			if(clickedColor!=pickedColor){
 				this.style.visibility="hidden";
-				document.getElementById('message').innerHTML="Intentalo Nuevamente";
+				document.getElementById('message').innerHTML="Intentalo nuevamente";
 			}else{
 				document.getElementById('message').innerHTML="¡Correcto!";
 				h1.style.background=pickedColor;
