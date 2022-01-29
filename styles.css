@@ -72,4 +72,8 @@ button:hover {
   	flex-wrap: wrap;
   	justify-content: center;
   }
+  #message{
+  	width: 40%;
+  	font-size: 12px;
+  }
 }
