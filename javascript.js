@@ -79,19 +79,22 @@ function global(){
 	document.getElementById('1').style.visibility="visible";
 	document.getElementById('2').style.visibility="visible";
 	document.getElementById('3').style.visibility="visible";
+	document.getElementById('4').style.visibility="visible";
+	document.getElementById('5').style.visibility="visible";
+	document.getElementById('6').style.visibility="visible";
 	h1.style.background="#232323";
 }
 function reset(){
 	if(hardclass=="selected"){
 		generateRandomColors(num);
 		global();
-		document.getElementById('4').style.visibility="visible";
-		document.getElementById('5').style.visibility="visible";
-		document.getElementById('6').style.visibility="visible";
 	}
 	if(easyclass=="selected"){
 		generateRandomColors(3);
 		global();
+		document.getElementById('4').style.visibility="hidden";
+		document.getElementById('5').style.visibility="hidden";
+		document.getElementById('6').style.visibility="hidden";
 	}
 }
 
@@ -111,7 +114,4 @@ function hard(){
 	hardclass="selected";
 	generateRandomColors(num);
 	global();
-	document.getElementById('4').style.visibility="visible";
-	document.getElementById('5').style.visibility="visible";
-	document.getElementById('6').style.visibility="visible";
 }
