@@ -82,32 +82,30 @@ function global(){
 		}
 	h1.style.background="#232323";
 }
-function reset(){
-	if(hardclass=="selected"){
-		global();
-	}
-	if(easyclass=="selected"){
-		var num=3;
-		global();
-		document.getElementById('4').style.visibility="hidden";
-		document.getElementById('5').style.visibility="hidden";
-		document.getElementById('6').style.visibility="hidden";
-	}
-}
-
-function easy(){
-	colors.length=3;
-	easyclass="selected";
-	hardclass="";
+function global2(){
 	var num=3;
 	global();
 	document.getElementById('4').style.visibility="hidden";
 	document.getElementById('5').style.visibility="hidden";
 	document.getElementById('6').style.visibility="hidden";
 }
+function reset(){
+	if(hardclass=="selected"){
+		global();
+	}
+	if(easyclass=="selected"){
+		global2();
+	}
+}
 function hard(){
 	colors.length=6;
 	easyclass="";
 	hardclass="selected";
 	global();
+}
+function easy(){
+	colors.length=3;
+	easyclass="selected";
+	hardclass="";
+	global2();
 }
