@@ -92,9 +92,6 @@ function reset(){
 	if(easyclass=="selected"){
 		generateRandomColors(3);
 		global();
-		document.getElementById('4').style.visibility="hidden";
-		document.getElementById('5').style.visibility="hidden";
-		document.getElementById('6').style.visibility="hidden";
 	}
 }
 
