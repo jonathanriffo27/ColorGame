@@ -72,7 +72,6 @@ function generateRandomColors(num){
 	}
 }
 function global(){
-	generateRandomColors(num);
 	asignar();
 	pick();
 	mensaje.innerHTML="";
@@ -83,17 +82,18 @@ function global(){
 	h1.style.background="#232323";
 }
 function global2(){
-	var num=3;
-	global();
 	document.getElementById('4').style.visibility="hidden";
 	document.getElementById('5').style.visibility="hidden";
 	document.getElementById('6').style.visibility="hidden";
 }
 function reset(){
 	if(hardclass=="selected"){
+		generateRandomColors(num);
 		global();
 	}
 	if(easyclass=="selected"){
+		generateRandomColors(3);
+		global();
 		global2();
 	}
 }
@@ -101,11 +101,14 @@ function hard(){
 	colors.length=6;
 	easyclass="";
 	hardclass="selected";
+	generateRandomColors(num);
 	global();
 }
 function easy(){
 	colors.length=3;
 	easyclass="selected";
 	hardclass="";
+	generateRandomColors(3);
+	global();
 	global2();
 }
