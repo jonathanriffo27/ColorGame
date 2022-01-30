@@ -16,7 +16,7 @@ pick();
 
 function asignar(){	
 	for(let i=0;i<cuadrados.length;i++){
-		cuadrados[i].style.background=colors[i];
+		cuadrados[i].style.backgroundColor=colors[i];
 	}	
 }
 function pick(){
@@ -27,13 +27,13 @@ function pick(){
 function evento(){
 	for(i=0;i<cuadrados.length;i++){
 		cuadrados[i].addEventListener("click",function(){
-			let clickedColor=this.style.background;
+			let clickedColor=this.style.backgroundColor;
 			if(clickedColor!=pickedColor){
 				this.style.visibility="hidden";
 				mensaje.innerHTML="Intentalo nuevamente";
 			}else{
 				mensaje.innerHTML="¡Correcto!";
-				h1.style.background=pickedColor;
+				h1.style.backgroundColor=pickedColor;
 				changeColors();
 				resetear.innerHTML="¿Jugar de nuevo?";
 			}
@@ -43,14 +43,14 @@ function evento(){
 function changeColors(){
 	if(hardclass=="selected"){
 		for(i=0;i<cuadrados.length;i++){
-			cuadrados[i].style.background=pickedColor;
+			cuadrados[i].style.backgroundColor=pickedColor;
 			cuadrados[i].style.visibility="visible";
 		}
 	}
 	if(easyclass=="selected"){
-		cuadrados[0].style.background=pickedColor;
-		cuadrados[1].style.background=pickedColor;
-		cuadrados[2].style.background=pickedColor;
+		cuadrados[0].style.backgroundColor=pickedColor;
+		cuadrados[1].style.backgroundColor=pickedColor;
+		cuadrados[2].style.backgroundColor=pickedColor;
 		cuadrados[0].style.visibility="visible";
 		cuadrados[1].style.visibility="visible";
 		cuadrados[2].style.visibility="visible";
@@ -72,25 +72,22 @@ function generateRandomColors(num){
 	}
 }
 function global(){
+	generateRandomColors(num);
 	asignar();
 	pick();
 	mensaje.innerHTML="";
 	resetear.innerHTML="Nuevos colores";
-	document.getElementById('1').style.visibility="visible";
-	document.getElementById('2').style.visibility="visible";
-	document.getElementById('3').style.visibility="visible";
-	document.getElementById('4').style.visibility="visible";
-	document.getElementById('5').style.visibility="visible";
-	document.getElementById('6').style.visibility="visible";
+	for(i=0;i<cuadrados.length;i++){
+			cuadrados[i].style.visibility="visible";
+		}
 	h1.style.background="#232323";
 }
 function reset(){
 	if(hardclass=="selected"){
-		generateRandomColors(num);
 		global();
 	}
 	if(easyclass=="selected"){
-		generateRandomColors(3);
+		var num=3;
 		global();
 		document.getElementById('4').style.visibility="hidden";
 		document.getElementById('5').style.visibility="hidden";
@@ -102,7 +99,7 @@ function easy(){
 	colors.length=3;
 	easyclass="selected";
 	hardclass="";
-	generateRandomColors(3);
+	var num=3;
 	global();
 	document.getElementById('4').style.visibility="hidden";
 	document.getElementById('5').style.visibility="hidden";
@@ -112,6 +109,5 @@ function hard(){
 	colors.length=6;
 	easyclass="";
 	hardclass="selected";
-	generateRandomColors(num);
 	global();
 }
