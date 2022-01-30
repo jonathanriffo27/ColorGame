@@ -1,30 +1,27 @@
 
-let colors=[
-	"rgb(240, 14, 128)",
-	"rgb(0, 0, 0)",
-	"rgb(255, 255, 255)",
-	"rgb(100, 100, 100)",
-	"rgb(50, 200, 50)",
-	"rgb(50, 50, 200)"
-];
-
+let colors=[];
 let cuadrados=document.querySelectorAll('.square');	
 let num=6;
 let h1=document.getElementById("h1");
+let pickedColor="";
+let mensaje=document.getElementById('message');
+let resetear=document.getElementById('reset');
+let display=document.getElementById('colorDisplay');
+let easyclass= document.getElementById('easy').className;
+let hardclass= document.getElementById('hard').className;
 
 generateRandomColors(num);
 asignar();
+pick();
 
 function asignar(){	
 	for(let i=0;i<cuadrados.length;i++){
 		cuadrados[i].style.background=colors[i];
 	}	
 }
-let pickedColor="";
-pick();
 function pick(){
 	pickedColor=pickColor();
-	document.getElementById('colorDisplay').innerHTML=pickedColor;
+	display.innerHTML=pickedColor;
 	evento();
 }
 function evento(){
@@ -33,20 +30,16 @@ function evento(){
 			let clickedColor=this.style.background;
 			if(clickedColor!=pickedColor){
 				this.style.visibility="hidden";
-				document.getElementById('message').innerHTML="Intentalo nuevamente";
+				mensaje.innerHTML="Intentalo nuevamente";
 			}else{
-				document.getElementById('message').innerHTML="¡Correcto!";
+				mensaje.innerHTML="¡Correcto!";
 				h1.style.background=pickedColor;
 				changeColors();
-				document.getElementById('reset').innerHTML="¿Jugar de nuevo?";
+				resetear.innerHTML="¿Jugar de nuevo?";
 			}
 		})
 	}
-}
-
-// function comparar(){
-// 	let clickedColor=this.style.background;
-// }	
+}	
 function changeColors(){
 	if(hardclass=="selected"){
 		for(i=0;i<cuadrados.length;i++){
@@ -78,64 +71,50 @@ function generateRandomColors(num){
 		colors[i]=randomColor();
 	}
 }
+function global(){
+	asignar();
+	pick();
+	mensaje.innerHTML="";
+	resetear.innerHTML="Nuevos colores";
+	document.getElementById('1').style.visibility="visible";
+	document.getElementById('2').style.visibility="visible";
+	document.getElementById('3').style.visibility="visible";
+	h1.style.background="#232323";
+}
 function reset(){
 	if(hardclass=="selected"){
 		generateRandomColors(num);
-		asignar();
-		pick();
-		document.getElementById('message').innerHTML="";
-		document.getElementById('reset').innerHTML="Nuevos colores";
-		h1.style.background="#232323";
-		document.getElementById('1').style.visibility="visible";
-		document.getElementById('2').style.visibility="visible";
-		document.getElementById('3').style.visibility="visible";
+		global();
 		document.getElementById('4').style.visibility="visible";
 		document.getElementById('5').style.visibility="visible";
 		document.getElementById('6').style.visibility="visible";
 	}
 	if(easyclass=="selected"){
 		generateRandomColors(3);
-		asignar();
-		pick();
-		document.getElementById('message').innerHTML="";
-		document.getElementById('reset').innerHTML="Nuevos colores";
-		h1.style.background="#232323";
-		document.getElementById('1').style.visibility="visible";
-		document.getElementById('2').style.visibility="visible";
-		document.getElementById('3').style.visibility="visible";
+		global();
+		document.getElementById('4').style.visibility="hidden";
+		document.getElementById('5').style.visibility="hidden";
+		document.getElementById('6').style.visibility="hidden";
 	}
 }
-let easyclass= document.getElementById('easy').className;
-let hardclass= document.getElementById('hard').className;
+
 function easy(){
 	colors.length=3;
 	easyclass="selected";
 	hardclass="";
 	generateRandomColors(3);
-	asignar();
-	pick();
-	// document.getElementById('message').innerHTML="";
-	// document.getElementById('reset').innerHTML="Nuevos colores";
-	document.getElementById('1').style.visibility="visible";
-	document.getElementById('2').style.visibility="visible";
-	document.getElementById('3').style.visibility="visible";
+	global();
 	document.getElementById('4').style.visibility="hidden";
 	document.getElementById('5').style.visibility="hidden";
 	document.getElementById('6').style.visibility="hidden";
-	h1.style.background="#232323";
 }
 function hard(){
 	colors.length=6;
 	easyclass="";
 	hardclass="selected";
 	generateRandomColors(num);
-	asignar();
-	pick();
-	document.getElementById('1').style.visibility="visible";
-	document.getElementById('2').style.visibility="visible";
-	document.getElementById('3').style.visibility="visible";
+	global();
 	document.getElementById('4').style.visibility="visible";
 	document.getElementById('5').style.visibility="visible";
 	document.getElementById('6').style.visibility="visible";
-	h1.style.background="#232323";
 }
