@@ -82,6 +82,7 @@ function global(){
 	h1.style.background="#232323";
 }
 function global2(){
+	global();
 	document.getElementById('4').style.visibility="hidden";
 	document.getElementById('5').style.visibility="hidden";
 	document.getElementById('6').style.visibility="hidden";
@@ -93,7 +94,6 @@ function reset(){
 	}
 	if(easyclass=="selected"){
 		generateRandomColors(3);
-		global();
 		global2();
 	}
 }
@@ -109,6 +109,5 @@ function easy(){
 	easyclass="selected";
 	hardclass="";
 	generateRandomColors(3);
-	global();
 	global2();
 }
