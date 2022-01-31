@@ -16,8 +16,7 @@ body{
 	background-color: black;
 	margin: 10px;
 	border-radius: 5px;
-	-webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.1s;
+  -webkit-transition: background 0.4s;
 }
 #h1{
 	display: flex;
