@@ -29,7 +29,7 @@ function evento(){
 		cuadrados[i].addEventListener("click",function(){
 			let clickedColor=this.style.backgroundColor;
 			if(clickedColor!=pickedColor){
-				this.style.visibility="hidden";
+				this.style.backgroundColor="#232323";
 				mensaje.innerHTML="Intentalo nuevamente";
 			}else{
 				mensaje.innerHTML="¡Correcto!";
@@ -44,16 +44,12 @@ function changeColors(){
 	if(hardclass=="selected"){
 		for(i=0;i<cuadrados.length;i++){
 			cuadrados[i].style.backgroundColor=pickedColor;
-			cuadrados[i].style.visibility="visible";
 		}
 	}
 	if(easyclass=="selected"){
 		cuadrados[0].style.backgroundColor=pickedColor;
 		cuadrados[1].style.backgroundColor=pickedColor;
 		cuadrados[2].style.backgroundColor=pickedColor;
-		cuadrados[0].style.visibility="visible";
-		cuadrados[1].style.visibility="visible";
-		cuadrados[2].style.visibility="visible";
 	}
 }
 function pickColor(){
